@@ -253,3 +253,31 @@ let str = "remove!! special% characters    with spaces"
 let str2 = str.replace(/[a-zA-Z0-9]/gi,'').trim()
 console.log(str2)
 //Output : !! %
+
+//===========================
+//iv) Fibbonacci in array
+let FibNum = prompt("Enter number to print Fib Series");
+
+let FibSeries = [0,1]
+for(let i = 2; i<FibNum; i++)
+{
+FibSeries[i] = FibSeries[i-1] + FibSeries[i-2]	
+}	
+console.log(FibSeries)
+
+//Fibbonacci Series using for loop using function
+let fib1 = 0;
+let fib2= 1;
+let fibNum=6
+function fibb()
+{
+    for(let i=0; i<fibNum; i++)
+        {
+            console.log(fib1);
+            let next = fib1 + fib2;
+            fib1 = fib2;
+            fib2 = next;
+        }
+}
+fibb();
+//==================================================
