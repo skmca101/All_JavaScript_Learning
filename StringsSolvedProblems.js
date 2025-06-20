@@ -311,4 +311,127 @@ for(let i=1; i<=ArrayNumLength; i++)
 }
 console.log(MissingNumArray);
 //================================================
+let num = 12;
+if(typeof num === 'number' && !isNaN(num))
+{
+console.log(num + 'is a number')
+}
 
+else
+
+{
+console.log(num + 'is not a number')
+}
+//===============================
+
+let b =[1,2,3,false,NaN, '', 4,5, null]
+let newarr = b.filter(Boolean)
+console.log(newarr)
+
+
+//=============================================================
+
+let year = prompt("Enter year I will tell you it's leap or not");
+if(year % 4 == 0 && year % 100 !== 0 || year % 400 == 0)
+   {
+    console.log(year + "is a leap year")
+
+   }
+else
+{
+     console.log(year + "is not a leap year")
+}
+//Output: 2024is a leap year
+
+
+//===============================================================
+//convert a string array to an integer array in JavaScript:
+
+const stringArray = ["1", "2", "3", "4", "5"];
+
+const integerArray = stringArray.map(Number);
+
+console.log(integerArray); // Output: [1, 2, 3, 4, 5]
+
+//===================================================================
+//union of arrays
+const a1 = [1, 2, 3];
+const a2 = [3, 4, 5];
+const union = [...new Set([...a1, ...a2])];
+console.log(union); 
+//===================================================================
+//--------------swap variables without 3rd variable
+let a = "ram";
+let b = "sharan";
+a = a.concat(b);
+console.log(a)
+b = a.substring(0,3);
+
+a = a.substring(3)
+console.log(a)
+console.log(b)
+
+//==================capital each letter of string=============
+let str = "Hi everyone I am automation engineer"
+let str1 = str.toLowerCase().split(" ")
+
+let ToCapitslEach = str1.map((word)=>
+ word.charAt(0).toUpperCase()+ word.slice(1)).join(" ")
+
+console.log(ToCapitslEach)
+
+//==========Anagram==============
+let str1 = prompt("enter first string : ")
+let str2 = prompt("enter second string :")
+let a = str1.replace(/\s+/g,'').toLowerCase()
+let b = str2.replace(/\s+/g,'').toLowerCase();
+if(a == b)
+{
+    console.log(`both are same : ${a} and ${b}`)
+}
+else if (a.length !== b.length)
+{
+    console.log(`both strings length are different so not possible ANAGRAM`)
+}
+else if(a.split('').sort().join('') === b.split('').sort().join(''))
+{
+   
+   console.log(`${a} and ${b} String are Anagram`)
+}
+else
+{
+    console.log("not a string")
+}
+//===========Substring==========
+function allSubstrings(str) {
+  let substrings = [];
+  for (let i = 0; i < str.length; i++) {
+    for (let j = i + 1; j <= str.length; j++) {
+      substrings.push(str.slice(i, j));
+    }
+  }
+  return substrings;
+}
+
+console.log(allSubstrings("abc"));
+
+//Without Function
+let str = "abcd"
+//let str2 = str.split("");
+let subString = [];
+for(let i = 0; i < str.length; i++)
+{
+  for(let j = i + 1; j<=str.length; j++)
+  {
+    subString.push(str.slice(i,j))
+  }
+}
+console.log(subString)
+
+//=========Count occurences of character==========
+function countChar(str, char) {
+  return str.split('').filter(c => c === char).length;
+}
+
+// Example
+console.log(countChar("banana", "a")); // 3
