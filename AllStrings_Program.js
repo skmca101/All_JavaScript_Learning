@@ -10,7 +10,7 @@ Strings Program
 8- Remove the duplicate characters 
 9- Capitalize each letter of string.
 10- Check two strings are Anagram or not
-11- Fins the substring of strings
+11- Find the substring of strings
 12- Count occurances of specific character */
 
 //**************List of String Program***********************/
