@@ -40,7 +40,15 @@ let uniqueDuplicates = [...new Set(duplicates)];
 
 console.log(uniqueDuplicates); // Output: [3, 5]
 
-
+//==============Print zero in start or end in array===========
+let arr = [1,3,0,2,0,4,0,3,4,5,0,2,1]
+let nonZero = arr.filter((num)=>num!== 0)
+//console.log(nonZero)
+let zero = arr.filter((num)=>num === 0)
+//console.log(zero)
+let result = zero.concat(nonZero)
+console.log(result)
+//==============================================================
 
 
 
