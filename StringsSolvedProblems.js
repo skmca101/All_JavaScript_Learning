@@ -88,7 +88,37 @@ for(let keys in frequency)
     }
 }
 console.log(duplicate)
+//==============TOP-3 repeated character count=====================
+let input = prompt("Enter any long string: ");
+let cleanedStr = input.toLowerCase().replace(/\s+/g,'').split('');
+//console.log(cleanedStr)
+let frequency = {};
+for(let i = 0; i < cleanedStr.length; i++)
+{
+    let char = cleanedStr[i];
+    //console.log(char)
+    frequency[char] = (frequency[char] || 0 ) +1
+    //console.log(`${char} is comes ${frequency[char]} times`)
+}
+let duplicate = [];
+for(let key in frequency)
+{
+   if(frequency[key] > 1)
+   {
+       duplicate.push([key,frequency[key]]) // push the character into duplicate variable
+       //duplicate = duplicate + key
+   }
+}
+//console.log(duplicate)
+duplicate.sort((a,b)=>b[1] - a[1]);
 
+let top3 = duplicate.slice(0,2); // How much count to be found
+
+top3.forEach(([char,count])=>{
+    console.log(`${char} : ${count}`)
+});
+
+//=================================================
 //Q- Remove duplicates chars from string
 let str = "I am removing the duplicates"
 let str2 = str.toLowerCase().replace(/\s+/g,'').split("")
