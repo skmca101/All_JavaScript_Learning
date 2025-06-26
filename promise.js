@@ -194,3 +194,38 @@ async function asyncFnc1()
 }
 asyncFnc1()
 =================================================
+//Find duplicates using PROMISE==============
+     new Promise((resolve,reject)=>{
+     try
+     {
+        let input = prompt("Enter any string to find the occurences: ")
+    let str = input.toLowerCase().replace(/\s+/g,'').split('');
+    let frequency = {};
+    for(let i = 0; i<str.length;i++)
+    {
+        char = str[i]
+        frequency[char] = (frequency[char] || 0) + 1
+    }
+    let duplicate=[];
+    for(let key in frequency)
+    {
+        if(frequency[key] > 1)
+        {
+            duplicate.push([key,frequency[key]])
+        }
+    }
+
+    resolve("Promise Resolved")
+    console.log(duplicate)
+    }
+     catch(err)
+     {
+         reject(err.name, err.message)
+     }
+    
+}).then((result)=>{
+console.log(result)    
+}).catch((err)=>
+{
+    console.log([err.name, err.message])
+})
