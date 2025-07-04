@@ -128,4 +128,33 @@ catch(err)
     console.log([err.name, err.message])
 }
 
-
+//=======Second Largest and Smallest============
+let arr = [10, 5, 8, 3, 9, 12, 5];
+ 
+let max = -Infinity
+let secondMax = -Infinity;
+let min = Infinity
+let secondMin = Infinity;
+ 
+for (let i = 0; i < arr.length; i++) {
+  let val = arr[i];
+ 
+  // For largest
+  if (val > max) {
+    secondMax = max;
+    max = val;
+  } else if (val > secondMax && val !== max) {
+    secondMax = val;
+  }
+ 
+  // For smallest
+  if (val < min) {
+    secondMin = min;
+    min = val;
+  } else if (val < secondMin && val !== min) {
+    secondMin = val;
+  }
+}
+ 
+console.log("Second Largest:", secondMax);  // Output: 10
+console.log("Second Smallest:", secondMin); // Output: 5
