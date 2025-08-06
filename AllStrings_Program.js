@@ -609,3 +609,18 @@ let str2 = str1.match(/\d+/g)
 console.log(str2)
 let str3 = str1.replace(/[0-9]/g, '')
 console.log(str3)
+//==================FInd substrings of string=============================
+let str = "santosh" //7
+//find all substrings
+let subStr = []; // 7x8/2 = 28 - Formula
+for(let i = 0; i <= str.length; i++)
+{
+    for(let j = i+1; j <= str.length; j++)
+    {
+        subStr.push(str.substring(i,j))
+        // subStr = ['s','sa','san',.....'santosh']
+        // subStr = ['a', 'an'......'antosh']
+    }
+}
+console.log(subStr.length)
+console.log(subStr)
