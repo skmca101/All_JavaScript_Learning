@@ -601,3 +601,11 @@ function countChar(str, char) {
 // Example
 console.log(countChar("banana", "a")); // 3
 
+//=========Remove and extract Special Char, numbers from string==================
+let str = "Hi!0034 user975s 234 Buil567der & Tester's 123"
+let str1 = str.replace(/[^a-zA-Z0-9]/g, '')
+console.log(str1)
+let str2 = str1.match(/\d+/g)
+console.log(str2)
+let str3 = str1.replace(/[0-9]/g, '')
+console.log(str3)
